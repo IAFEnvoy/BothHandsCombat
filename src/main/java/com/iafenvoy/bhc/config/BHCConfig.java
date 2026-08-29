@@ -6,11 +6,11 @@ import com.iafenvoy.jupiter.config.entry.BooleanEntry;
 import com.iafenvoy.jupiter.config.entry.DoubleEntry;
 import net.minecraft.resources.Identifier;
 
-public final class CombatConfig extends AutoInitConfigContainer {
-    public static final CombatConfig INSTANCE = new CombatConfig();
+public final class BHCConfig extends AutoInitConfigContainer {
+    public static final BHCConfig INSTANCE = new BHCConfig();
     public final Settings settings = new Settings();
 
-    private CombatConfig() {
+    private BHCConfig() {
         super(Identifier.fromNamespaceAndPath(BothHandsCombat.MOD_ID, "common"),
                 "config.both_hands_combat.title", "./config/both_hands_combat.json");
     }

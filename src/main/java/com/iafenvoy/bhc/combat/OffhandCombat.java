@@ -1,6 +1,6 @@
 package com.iafenvoy.bhc.combat;
 
-import com.iafenvoy.bhc.config.CombatConfig;
+import com.iafenvoy.bhc.config.BHCConfig;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
@@ -15,13 +15,13 @@ public final class OffhandCombat {
     }
 
     public static void attack(ServerPlayer player, int targetId) {
-        if (!CombatConfig.enabled() || player.isSpectator() || player.isUsingItem()
+        if (!BHCConfig.enabled() || player.isSpectator() || player.isUsingItem()
                 || !HandCombat.canSwingHand(player, InteractionHand.OFF_HAND)) return;
 
         Entity target = player.level().getEntity(targetId);
         if (target == null || target == player || player.distanceToSqr(target) > 36.0D
                 || HandCombat.isDisabledEntity(target)
-                || CombatConfig.requireLineOfSight() && !player.hasLineOfSight(target)) return;
+                || BHCConfig.requireLineOfSight() && !player.hasLineOfSight(target)) return;
 
         ItemStack mainHand = player.getMainHandItem();
         ItemStack offhand = player.getOffhandItem();
@@ -39,7 +39,7 @@ public final class OffhandCombat {
         } finally {
             data.attackStrengthTicker = 0;
             player.attackStrengthTicker = Math.min(mainTicker,
-                    (int) (player.getCurrentItemAttackStrengthDelay() * CombatConfig.attackTimeoutAfterSwing()));
+                    (int) (player.getCurrentItemAttackStrengthDelay() * BHCConfig.attackTimeoutAfterSwing()));
             HandCombat.setItemStackToSlot(player, EquipmentSlot.OFFHAND, offhand);
             HandCombat.setItemStackToSlot(player, EquipmentSlot.MAINHAND, mainHand);
             HandCombat.makeInactive(player, offhand, mainHand);

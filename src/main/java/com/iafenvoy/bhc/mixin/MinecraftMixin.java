@@ -2,7 +2,7 @@ package com.iafenvoy.bhc.mixin;
 
 import com.iafenvoy.bhc.combat.CombatState;
 import com.iafenvoy.bhc.combat.HandCombat;
-import com.iafenvoy.bhc.config.CombatConfig;
+import com.iafenvoy.bhc.config.BHCConfig;
 import com.iafenvoy.bhc.network.payload.OffhandAttackC2SPayload;
 import com.iafenvoy.bhc.registry.tag.BhcTags;
 import net.minecraft.client.Minecraft;
@@ -31,7 +31,7 @@ public abstract class MinecraftMixin {
 
     @Inject(method = "startUseItem", at = @At("HEAD"), cancellable = true)
     private void bothHandsCombat$startUseItem(CallbackInfo ci) {
-        if (this.player == null || this.player.isHandsBusy() || this.player.isCrouching() || !CombatConfig.enabled()
+        if (this.player == null || this.player.isHandsBusy() || this.player.isCrouching() || !BHCConfig.enabled()
                 || !HandCombat.canSwingHand(this.player, InteractionHand.OFF_HAND) || this.hitResult == null) {
             return;
         }

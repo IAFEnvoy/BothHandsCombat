@@ -1,6 +1,6 @@
 package com.iafenvoy.bhc.combat;
 
-import com.iafenvoy.bhc.config.CombatConfig;
+import com.iafenvoy.bhc.config.BHCConfig;
 import com.iafenvoy.bhc.registry.tag.BhcTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -43,7 +43,7 @@ public final class HandCombat {
         CombatState.Data data = CombatState.get(player);
         data.attackStrengthTicker = 0;
         if (canSwingHand(player, InteractionHand.MAIN_HAND)) {
-            int half = (int) (CombatConfig.attackTimeoutAfterSwing() * player.getCurrentItemAttackStrengthDelay());
+            int half = (int) (BHCConfig.attackTimeoutAfterSwing() * player.getCurrentItemAttackStrengthDelay());
             if (player.attackStrengthTicker > half) player.attackStrengthTicker = half;
         }
     }
