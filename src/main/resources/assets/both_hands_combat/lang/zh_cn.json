@@ -1,0 +1,7 @@
+{
+  "config.both_hands_combat.title": "双手战斗",
+  "config.both_hands_combat.settings": "双手战斗",
+  "config.both_hands_combat.enabled": "启用副手战斗",
+  "config.both_hands_combat.require_line_of_sight": "需要视线畅通",
+  "config.both_hands_combat.attack_timeout_after_swing": "副手挥动后的主手冷却时间"
+}

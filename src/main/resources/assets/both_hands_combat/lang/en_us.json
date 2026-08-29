@@ -1,0 +1,7 @@
+{
+  "config.both_hands_combat.title": "Both Hands Combat",
+  "config.both_hands_combat.settings": "Both Hands Combat",
+  "config.both_hands_combat.enabled": "Enable Off-Hand Combat",
+  "config.both_hands_combat.require_line_of_sight": "Require Line of Sight",
+  "config.both_hands_combat.attack_timeout_after_swing": "Main-Hand Cooldown After Off-Hand Swing"
+}
