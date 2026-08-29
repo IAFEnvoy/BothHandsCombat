@@ -2,6 +2,9 @@
 
 NeoForge 26.1.2 port of [OffHandCombat](https://github.com/BunnyCinnamon/OffHandCombat).
 
+This mod allows players to use an attackable weapon in the offhand and perform independent off-hand attacks, including
+dual crossbows.
+
 ## Features
 
 - Use an attackable weapon in the offhand and right-click an entity to perform an independent off-hand attack.
@@ -13,8 +16,7 @@ NeoForge 26.1.2 port of [OffHandCombat](https://github.com/BunnyCinnamon/OffHand
 
 ## Configuration
 
-Configure the mod through the in-game configuration screen supplied by Jupiter. The same values are stored in
-`config/both_hands_combat.json` for manual or server-side management:
+Configure the mod through the in-game configuration screen supplied by Jupiter:
 
 - `enabled`: enables off-hand combat.
 - `requireLineOfSight`: blocks attacks through walls.
@@ -32,11 +34,8 @@ For example, a data pack can disable off-hand combat for a specific entity type:
 ```json
 {
   "replace": false,
-  "values": ["minecraft:armor_stand"]
+  "values": [
+    "minecraft:armor_stand"
+  ]
 }
 ```
-
-## Credits
-
-Gameplay behavior is ported from OffHandCombat by Arekkuusu and BunnyCinnamon, distributed under the MIT License. This
-project targets Minecraft 26.1.2 and NeoForge 26.1.2.99.
